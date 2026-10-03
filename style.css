@@ -1,0 +1,216 @@
+/* Base page styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f1f5f9;
+}
+
+.site-header {
+    padding: 24px;
+    color: #ffffff;
+    background-color: #1d4ed8;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.brand img {
+    display: block;
+    border-radius: 12px;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.site-header p {
+    margin: 4px 0 0;
+}
+
+.container {
+    width: min(100% - 32px, 1000px);
+    margin: 28px auto;
+}
+
+.add-expense-section,
+.expenses-section,
+.help-section,
+.video-section {
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+}
+
+.add-expense-section {
+    border-left: 5px solid #2563eb;
+}
+
+.expenses-section {
+    border-left: 5px solid #0891b2;
+}
+
+/* Direct-child selector */
+.add-expense-section > h2,
+.expenses-section > h2,
+.video-section > h2 {
+    margin-top: 0;
+}
+
+/* Form layout and input styling */
+#expense-form {
+    display: grid;
+    gap: 8px;
+    max-width: 560px;
+}
+
+#expense-form input,
+#expense-form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    font: inherit;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+/* Focus pseudo-class */
+#expense-form input:focus,
+#expense-form select:focus {
+    outline: 3px solid #bfdbfe;
+    border-color: #2563eb;
+}
+
+/* Negation pseudo-class */
+input:not([type="submit"]) {
+    color: #0f172a;
+}
+
+button {
+    width: fit-content;
+    padding: 12px 20px;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    background-color: #2563eb;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+/* Table styling */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+}
+
+/* Positional pseudo-class */
+thead tr:first-child {
+    color: #ffffff;
+    background-color: #1d4ed8;
+}
+
+/* Alternating table rows */
+tbody tr:nth-child(even) {
+    background-color: #eff6ff;
+}
+
+/* Descendant selector */
+.expenses-section td {
+    font-size: 15px;
+}
+
+/* Hover pseudo-class */
+tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+details {
+    padding: 4px 0;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #1d4ed8;
+}
+
+details p {
+    margin-bottom: 4px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.site-footer {
+    padding: 16px;
+    text-align: center;
+    color: #475569;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 600px) {
+    .brand {
+        align-items: flex-start;
+    }
+
+    .brand img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .site-header {
+        padding: 18px;
+    }
+
+    .add-expense-section,
+    .expenses-section,
+    .help-section,
+    .video-section {
+        padding: 18px;
+    }
+}
